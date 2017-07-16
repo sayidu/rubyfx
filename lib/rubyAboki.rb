@@ -16,15 +16,11 @@ module RubyAboki
     @@scraped_data.each do |data|
       data_text = data.text
         if data_text =~ /\d{3}[[:space:]]/
-          curr_rate = data.text.split('/')
-          @@rates.push(data_text)  
+          curr_rates = data.text.delete('/').split(' ')
+          @@rates.concat(curr_rates) 
       end
     end
     @@rates
   end
-
-  def curr_rates
-
-  end
-
 end
+
