@@ -12,6 +12,10 @@ module RubyAboki
      ['usd', 'gbp', 'eur']
   end 
 
+  def rate_types
+    ['cbn', 'movement', 'lagos_previous', 'moneygram', 'westernunion', 'otherparallel']
+  end
+  
   def strip_rates
     @@scraped_data.each do |data|
       data_text = data.text
